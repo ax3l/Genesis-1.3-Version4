@@ -3,9 +3,9 @@
 #
 # libraries
 #
-LIB= -lm -lstdc++ -lmpi_cxx -lfftw3
+LIB= -lm -lstdc++ -lmpi_cxx -lfftw3 -L/usr/lib/x86_64-linux-gnu/hdf5/openmpi/ -lhdf5
 #
-INCLUDE=-I./include
+INCLUDE=-I./include -I/usr/include/hdf5/openmpi/
 #
 # cpp-macros - to enable the FFTW library
 #
@@ -14,7 +14,7 @@ DMACRO = -DAAAFFTW
 #  compilers
 #
 VPATH = src/Core src/IO src/Lattice src/Util src/Main src/Loading
-CCOMPILER = h5pcc
+CCOMPILER = mpic++
 #CCOMPILER = vtcxx -vt:cxx h5pcc -vt:inst manual -DVTRACE
 #
 #  flags
